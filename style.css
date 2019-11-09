@@ -18,12 +18,12 @@ h2 {
     font-size: 30px;
     font-weight: bold; 
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .form-group {
     color: #1E1E6D;
     margin-bottom: 40px;
-    margin-top: 20px;
     font-size: 18px;
 }
 
@@ -44,6 +44,7 @@ input:hover {
     margin-bottom: 35px;
     align-content: center;
     margin-right: 10px;
+    color: white;
 }
 
 form {
