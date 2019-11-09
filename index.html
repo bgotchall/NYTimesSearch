@@ -29,11 +29,11 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col text-center">
+      <div class="col text-center" id="title">
         <h1>New York Times Search</h1>
       </div>
     </div>
-    <div class="row">
+    <div class="row" id="mainContext">
       <div class="col">
         <h2>Search Parameters</h2>
         <form>
@@ -53,8 +53,8 @@
             <label for="End Year">End Year(optional):</label><br>
             <input type="text" id="endYear" name="End Year">
           </div>
-          <input class="btn btn-primary" id="searchBtn" type="submit" value="Search">
-          <input class="btn btn-primary" id="clearBtn" type="reset" value="Clear Results">
+          <input class="btn btn-outline-dark" id="searchBtn" type="submit" value="Search">
+          <input class="btn btn-outline-dark" id="clearBtn" type="reset" value="Clear Results">
         </form>
       </div>
     </div>
