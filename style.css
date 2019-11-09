@@ -1,0 +1,51 @@
+body {
+    font-family: "Avant Garde", "Franklin Gothic Medium", "Calibri", "candara";
+    background-color: #B8B7B7;
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: bold;
+    color: #1E1E6D;
+    border-bottom: 2px solid white;
+    margin-left: -200px;
+    margin-right: -200px; 
+    padding-bottom: 15px;
+}
+
+h2 {
+    color: #1E1E6D;
+    font-size: 30px;
+    font-weight: bold; 
+    text-align: center;
+}
+
+.form-group {
+    color: #1E1E6D;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+input {
+    padding-right: 650px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: white;
+}
+
+input:hover {
+    background-color: #1E1E6D;
+}
+
+.btn {
+    background-color: #1E1E6D;
+    border: 1px solid white;
+    margin-bottom: 35px;
+    align-content: center;
+    margin-right: 10px;
+}
+
+form {
+    margin-left: 130px;
+}
