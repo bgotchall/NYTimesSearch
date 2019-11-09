@@ -1,67 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
-    <link rel="stylesheet" type="text/css" href="normalize.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <title>New York Times Search</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h1>New York Times Search</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <h2>Search Parameters</h2>
-          <label for="Search Term">Search Term:</label>
-          <input type="text" id="searchTerm" name="Search Term"><br>
-          <label for="Number of Records to Retrieve">Number of Records to Retrieve:</label>
-          <input type="text" id="numRecords" name="Number of Records to Retrieve"><br>
-          <label for="Start Year">Start Year(optional):</label>
-          <input type="text" id="startYear" name="Start Year"><br>
-          <label for="End Year">End Year(optional):</label>
-          <input type="text" id="endYear" name="End Year">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <h2>Top Articles</h2>
-          <div id="articles"></div>
-        </div>
+  <link rel="stylesheet" type="text/css" href="normalize.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+  <title>New York Times Search</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <h1>New York Times Search</h1>
       </div>
     </div>
+    <div class="row">
+      <div class="col">
+        <h2>Search Parameters</h2>
+        <form>
+          <div class="form-group">
+            <label for="Search Term">Search Term:</label><br>
+            <input type="text" id="searchTerm" name="Search Term">
+          </div>
+          <div class="form-group">
+            <label for="Number of Records to Retrieve">Number of Records to Retrieve:</label><br>
+            <input type="number" id="numRecords" name="Number of Records to Retrieve">
+          </div>
+          <div class="form-group">
+            <label for="Start Year">Start Year(optional):</label><br>
+            <input type="text" id="startYear" name="Start Year">
+          </div>
+          <div class="form-group">
+            <label for="End Year">End Year(optional):</label><br>
+            <input type="text" id="endYear" name="End Year">
+          </div>
+          <input class="btn btn-primary" id="searchBtn" type="submit" value="Search">
+          <input class="btn btn-primary" id="clearBtn" type="reset" value="Clear Results">
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h2>Top Articles</h2>
+        <div id="articles"></div>
+      </div>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>
