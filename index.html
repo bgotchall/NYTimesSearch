@@ -31,10 +31,35 @@
     <link rel="stylesheet" type="text/css" href="normalize.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
 
-    <title>Quiz Game</title>
+    <title>New York Times Search</title>
   </head>
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>New York Times Search</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2>Search Parameters</h2>
+          <label for="Search Term">Search Term:</label>
+          <input type="text" id="searchTerm" name="Search Term"><br>
+          <label for="Number of Records to Retrieve">Number of Records to Retrieve:</label>
+          <input type="text" id="numRecords" name="Number of Records to Retrieve"><br>
+          <label for="Start Year">Start Year(optional):</label>
+          <input type="text" id="startYear" name="Start Year"><br>
+          <label for="End Year">End Year(optional):</label>
+          <input type="text" id="endYear" name="End Year">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2>Top Articles</h2>
+          <div id="articles"></div>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
