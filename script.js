@@ -4,10 +4,10 @@
 //<script type="text/javascript">
 var my_key= "KVtPDlU5TfAMaVQLWvsYQQo6sta3L8Dz";
 var question= $("#searchTerm").val();
+//var question= "London";
 var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + question + "&api-key="+ my_key;
-var num_responses=5;
-
-
+var num_responses=$("#numRecords").val();
+//var num_responses=4;
 
 
 function get_a_result(){
@@ -37,15 +37,18 @@ function get_a_result(){
             $("#articles").append(var_new_div);
         }
         
-       
-
-        
-       
-
 
     });
 }
 
-get_a_result();
 
+$("#searchBtn").on("click",function(event){
+    event.preventDefault();
+    
+     question= $("#searchTerm").val();
+     queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + question + "&api-key="+ my_key;
+     num_responses=$("#numRecords").val();
+     get_a_result();
+
+});
 //</script>
