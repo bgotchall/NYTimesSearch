@@ -25,7 +25,9 @@ function get_a_result(){
             var_new_div=$("<div>");
             $(var_new_div).append("<H3>"+response.response.docs[i].headline.main+"</H3>")
             $(var_new_div).append("<p>"+response.response.docs[i].abstract+"</p>")
-            $(var_new_div).append("<p>"+response.response.docs[i].pub_date+"</p>")
+            var my_date=response.response.docs[i].pub_date.split("T");      //get rid of everything after the "T"
+            var trimmed_date=my_date[0];
+            $(var_new_div).append("<p>"+trimmed_date+"</p>")
             $(var_new_div).append("<p>"+response.response.docs[i].byline.original+"</p>")
            // console.log("<a href=\""+response.response.docs[i].web_url+"\">"+response.response.docs[i].web_url+"</a>");
             $(var_new_div).append("<a href=\""+response.response.docs[i].web_url+"\">"+response.response.docs[i].web_url+"</a>")
@@ -55,8 +57,7 @@ function buildDateString(){
 //build the filter portion of the URL by searching the optional date inputs.  If either are blank,return blank.
     var start_year = parseInt($("#startYear").val());
     var end_year = parseInt($("#endYear").val());
-    console.log ("start year: "+start_year);
-    console.log ("end year: "+ end_year);
+
 
     //"&fq=pub_year:("+temp_string+")
     var temp_str="";
@@ -66,9 +67,9 @@ function buildDateString(){
         for (var i=parseInt(start_year); i<parseInt(end_year+1);i++){
             temp_str=temp_str+'"' +i+'"' ;         //add the year and a space
         }
-        console.log("date string is: "+temp_str);
+        
         var answer='&fq=pub_year:('+temp_str+')';
-        console.log("total filter is: "+answer);
+        
         return answer;
     } else {
        //no years requested.  the filter part should be blank
